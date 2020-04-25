@@ -18,7 +18,6 @@ jobs:
       - image: jdoi/json-dir_elm-dev:latest
     steps:
       - checkout
-      - run: cd app
-      - run: yarn build
+      - run: cd app && yarn build
 
       
