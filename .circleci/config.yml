@@ -26,7 +26,7 @@ jobs:
       - persist_to_workspace:
           root: app/dist
           paths:
-            - *.html
+            - '*.html'
   deploy:
     docker:
       - image: andreysenov/firebase-tools:latest
