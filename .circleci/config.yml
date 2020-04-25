@@ -19,7 +19,10 @@ jobs:
     # working_directory: /tmp
     steps:
       - checkout
-      - run: cd app && yarn build
+      # - run: cd app && yarn build
+      - run: |
+          cd app
+          yarn build
       - store_artifacts:
           path: app/dist
 
