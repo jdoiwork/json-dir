@@ -1,0 +1,11 @@
+version: "3.7"
+
+services:
+  elm-dev:
+    build: ./elm-dev
+    volumes:
+      - .:/code
+    working_dir: /code
+    tty: true
+    stdin_open: true
+    
