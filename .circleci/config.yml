@@ -20,7 +20,7 @@ jobs:
       - checkout
       - run: |
           cd app
-          yarn build
+          yarn build-release
       - store_artifacts:
           path: app/dist
       - persist_to_workspace:
