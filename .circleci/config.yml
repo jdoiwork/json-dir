@@ -16,10 +16,8 @@ jobs:
   build:
     docker:
       - image: jdoi/json-dir_elm-dev:latest
-    # working_directory: /tmp
     steps:
       - checkout
-      # - run: cd app && yarn build
       - run: |
           cd app
           yarn build
