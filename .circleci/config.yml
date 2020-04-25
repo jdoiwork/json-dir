@@ -23,5 +23,27 @@ jobs:
           yarn build
       - store_artifacts:
           path: app/dist
+      - persist_to_workspace:
+          paths:
+            - app/dist
+  deploy:
+    docker:
+      - image: andreysenov/firebase-tools:latest
+    steps:
+      - checkout
+      - attach_workspace:
+          at: app/dist
+      - run: |
+          cd app
+          firebase deploy --token "$FIREBASE_TOKEN"
 
-      
+workflows:
+  version: 2
+
+  btd:
+    jobs:
+      - build
+      - deploy:
+          requires:
+            - build
+

@@ -13,7 +13,7 @@
   },
   "homepage": "https://github.com/jdoiwork/json-dir#readme",
   "scripts": {
-    "build": "elm make src/Main.elm --output dist/main.html",
+    "build": "elm make src/Main.elm --output dist/index.html",
     "test": "echo test"
   },
   "description": ""
