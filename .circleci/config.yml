@@ -16,10 +16,11 @@ jobs:
   build:
     docker:
       - image: jdoi/json-dir_elm-dev:latest
+    working_directory: /tmp
     steps:
       - checkout
       - run: cd app && yarn build
       - store_artifacts:
-        path: ~/project/app/dist
+        path: /tmp/app/dist
 
       
