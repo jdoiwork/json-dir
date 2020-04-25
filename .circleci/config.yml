@@ -24,14 +24,16 @@ jobs:
       - store_artifacts:
           path: app/dist
       - persist_to_workspace:
+          root: app
           paths:
-            - app/dist
+            - dist
   deploy:
     docker:
       - image: andreysenov/firebase-tools:latest
     steps:
       - checkout
       - attach_workspace:
+
           at: app/dist
       - run: |
           cd app
