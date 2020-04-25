@@ -24,9 +24,9 @@ jobs:
       - store_artifacts:
           path: app/dist
       - persist_to_workspace:
-          root: app
+          root: app/dist
           paths:
-            - dist
+            - *.html
   deploy:
     docker:
       - image: andreysenov/firebase-tools:latest
@@ -37,7 +37,7 @@ jobs:
           at: app/dist
       - run: |
           cd app
-          ls dist
+          ls dist -la
           firebase deploy --token "$FIREBASE_TOKEN"
 
 workflows:
