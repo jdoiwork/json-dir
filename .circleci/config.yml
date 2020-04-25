@@ -37,6 +37,7 @@ jobs:
           at: app/dist
       - run: |
           cd app
+          ls dist
           firebase deploy --token "$FIREBASE_TOKEN"
 
 workflows:
