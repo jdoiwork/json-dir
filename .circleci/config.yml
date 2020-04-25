@@ -20,6 +20,6 @@ jobs:
       - checkout
       - run: cd app && yarn build
       - store_artifacts:
-        path: app/dist
+        path: ~/project/app/dist
 
       
