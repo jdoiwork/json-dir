@@ -21,6 +21,6 @@ jobs:
       - checkout
       - run: cd app && yarn build
       - store_artifacts:
-        path: /tmp/app/dist
+          path: /tmp/app/dist
 
       
